@@ -1,6 +1,7 @@
 version: '2'
 services :
   web :
+    container_name: ocsinventory-server
     build : .
     links :
       - db
@@ -9,6 +10,7 @@ services :
       - 443:443
 
   db :
+    container_name: ocsinventory-db
     image : mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD : mdp
