@@ -19,5 +19,9 @@ services :
       MYSQL_DATABASE : ocsweb
     volumes :
       - ./sql/:/docker-entrypoint-initdb.d/
+      - ocsdb:/var/lib/mysql
     ports :
       - 3306:3306
+
+volumes:
+  ocsdb:
